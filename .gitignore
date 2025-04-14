@@ -1,0 +1,10 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+
+# Other directories or files you want to ignore
+*.log
+.DS_Store
