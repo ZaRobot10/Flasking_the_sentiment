@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 import pickle
 
 # Load the saved vectorizer and model
@@ -6,7 +8,7 @@ with open('sentiment_model.pkl', 'rb') as file:
     vectorizer, model = pickle.load(file)
 
 app = Flask(__name__)
-
+CORS(app)  # This enables CORS on all routes with default settings
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
